@@ -16,22 +16,24 @@ namespace Exceptions
 
             while (true)
             {
-                try 
+                try
                 {
-                    if (InputABC(ref a, ref b, ref c) == ConsoleKey.Escape)
+                    var pressedKey = InputABC(ref a, ref b, ref c);
+                    if  (pressedKey == ConsoleKey.Escape)
                         break;
 
-                    if (InputABC(ref a, ref b, ref c) == ConsoleKey.Enter)
+                    if (pressedKey == ConsoleKey.Enter)
                         CalculateEquation(a, b, c);
                 }
 
-                catch (Exception errors)
+                catch (InputDataException e)
                 {
-                    if (errors.Message == "Incorrect input")
-                        FormatData(errors.Message, Severity.Error, errors.Data);
-
-                    if (errors.Message == "No roots found")
-                        FormatData(errors.Message, Severity.Warning, errors.Data);
+                    FormatData(e.Message, Severity.Error, e.Data);
+                }
+                
+                catch (NoRootsException e)
+                {
+                    FormatData(e.Message, Severity.Warning, e.Data);
                 }
             }
         }
@@ -62,14 +64,57 @@ namespace Exceptions
 
             Console.Write("Press any key...");
             Console.ReadKey();
-
             Console.SetCursorPosition(0, 0);
             Console.ResetColor();
         }
 
         private static void CalculateEquation(int a, int b, int c)
         {
-            throw new NotImplementedException(); // implement function
+            double x1, x2;
+            double discriminant;
+
+            Console.SetCursorPosition(0, 13);
+            Console.WriteLine(new string('-', 50));
+            Console.WriteLine("List of roots: ");
+
+            discriminant = Math.Pow(b, 2) - 4 * a * c;
+
+            switch (discriminant) 
+            { 
+                case 0:
+                    if (a != 0)
+                        x1 = ((-1 * b) + Math.Sqrt(discriminant)) / (2 * a);
+                    else
+                        x1 = -1 * b;
+
+                    Console.WriteLine($"Equation has only ONE root: {x1, 0:f2}");
+                    break;
+
+                case < 0:
+                    var ex = new NoRootsException("No roots found");
+                    throw ex;
+
+                case > 0:
+                    if (a != 0)
+                    {
+                        x1 = ((-1 * b) + Math.Sqrt(discriminant)) / (2 * a);
+                        x2 = ((-1 * b) - Math.Sqrt(discriminant)) / (2 * a);
+                    }
+                    else 
+                    {
+                        x1 = -1 * b;
+                        x2 = b;
+                    }
+
+                    Console.WriteLine($"Root X1: {x1, 0:f2}");
+                    Console.WriteLine($"Root X2: {x2, 0:f2}");
+                    break;
+            }
+
+            Console.Write("\nPress any key...");
+            Console.ReadKey();
+            Console.SetCursorPosition(0, 0);
+
         }
 
         private static ConsoleKey InputABC(ref int a, ref int b, ref int c)
@@ -177,17 +222,19 @@ namespace Exceptions
                         break;
                     
                     case ConsoleKey.Enter:
-                        var ex = new Exception("Incorrect input");
+                        var ex = new InputDataException("Incorrect input");
+                        string availablePeriod = $" (value should be from {Int32.MinValue} to {Int32.MaxValue})";
+
                         if (_a.Length == 0)  _a = "0";
                         if (_b.Length == 0)  _b = "0";
                         if (_c.Length == 0)  _c = "0";
 
                         if (!Int32.TryParse(_a, out a))
-                            ex.Data.Add("a",_a);
+                            ex.Data.Add("a",_a + availablePeriod);
                         if (!Int32.TryParse(_b, out b))
-                            ex.Data.Add("b", _b);
+                            ex.Data.Add("b", _b + availablePeriod );
                         if (!Int32.TryParse(_c, out c))
-                            ex.Data.Add("c", _b);
+                            ex.Data.Add("c", _c + availablePeriod);
                         if (ex.Data.Count > 0)
                             throw ex;
                         return pressedKey.Key;
