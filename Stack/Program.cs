@@ -30,7 +30,6 @@
                 s.Pop();
                 s.Pop();
                 s.Pop();
-
             }
             catch (Exception ex)
             {

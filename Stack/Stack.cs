@@ -10,48 +10,51 @@ namespace Stack
 
     internal class Stack
     {
-
-        List<string> _stack = new List<string>();
         public int Size { get; private set; }
         public string Top { get; private set; }
 
+        private StackItem _head;
+        private class StackItem
+        {
+            public string Value { get; set; }
+            public StackItem Prev { get; set; }
+            public StackItem(StackItem stackItem, string value)
+            {
+                Prev = stackItem;
+                Value = value;
+            }
+        }
+
         public Stack(params string[] values) {
-            _stack.AddRange(values);
-            _stack.Reverse();
-            SetSizeAndTop();
+            if (values.Length > 0) 
+            {
+                foreach (string value in values)
+                {
+                    StackItem newItem = new StackItem(_head, value);
+                    _head = newItem;
+                    Top = newItem.Value;                    
+                    Size++;
+                }
+            }
         }
 
         public void Add(string value)
         {
-            _stack.Reverse();
-            _stack.Add(value);
-            _stack.Reverse();
-            SetSizeAndTop();
+            _head = new StackItem(_head, value);
+            Top = _head.Value;
+            Size++;
         }
 
         public string Pop()
         {
-            if (_stack.Count == 0)
-            { 
-                var ex = new EmptyStackException("Stack is empty");
-                throw ex;
-            }
-            
+            if (Size == 0)
+                throw new EmptyStackException("Stack is empty");
 
-            var item = _stack[0];
-
-            _stack.RemoveAt(0);
-            SetSizeAndTop();
-
+            var item = _head.Value;            
+            _head = _head.Prev;
+            Top = _head?.Value;
+            Size--;
             return item;
-        }
-
-        private void SetSizeAndTop() {
-            Size = _stack.Count;
-            if (_stack.Count > 0)
-                Top = _stack[0];
-            else
-                Top = null;
         }
 
         public static Stack Concat(params Stack[] listOfStacks) 
