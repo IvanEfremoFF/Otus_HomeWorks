@@ -13,10 +13,11 @@ namespace Stack
         }
 
         private StackItem? _head;
-        private class StackItem(StackItem? stackItem, string value)
+
+        private class StackItem
         {
-            public string Value { get; set; } = value;
-            public StackItem? Prev { get; set; } = stackItem;
+            public string? Value { get; set; } 
+            public StackItem? Next { get; set; } 
         }
 
         public Stack(params string[] values) {
@@ -24,7 +25,7 @@ namespace Stack
             {
                 foreach (string value in values)
                 {
-                    StackItem newItem = new(_head, value);
+                    var  newItem = new StackItem { Next = _head, Value = value };
                     _head = newItem;
                     Size++;
                 }
@@ -33,7 +34,7 @@ namespace Stack
 
         public void Add(string value)
         {
-            _head = new StackItem(_head, value);
+            _head = new StackItem { Next = _head, Value = value };
             Size++;
         }
 
@@ -42,8 +43,8 @@ namespace Stack
             if (Size == 0)
                 throw new EmptyStackException("Stack is empty");
 
-            var item = _head?.Value;            
-            _head = _head?.Prev;
+            string? item = _head?.Value;            
+            _head = _head?.Next;
             Size--;
             return item;
         }
