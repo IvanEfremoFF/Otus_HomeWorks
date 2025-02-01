@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exceptions", "Exeptions\Exc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stack", "Stack\Stack.csproj", "{0977E056-2204-4FF5-9995-744EEC4D646A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{12F4472F-F6C6-4B95-A399-F205D807AAA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\Interfaces.csproj", "{12F4472F-F6C6-4B95-A399-F205D807AAA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnonymusTypes", "AnonymusTypes\AnonymusTypes.csproj", "{58B54C92-98E1-4C68-943C-6860B661069B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{12F4472F-F6C6-4B95-A399-F205D807AAA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12F4472F-F6C6-4B95-A399-F205D807AAA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12F4472F-F6C6-4B95-A399-F205D807AAA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58B54C92-98E1-4C68-943C-6860B661069B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58B54C92-98E1-4C68-943C-6860B661069B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58B54C92-98E1-4C68-943C-6860B661069B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58B54C92-98E1-4C68-943C-6860B661069B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
