@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnonymusTypes", "AnonymusTypes\AnonymusTypes.csproj", "{58B54C92-98E1-4C68-943C-6860B661069B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuples", "Tuples\Tuples.csproj", "{67671186-9022-40C1-9CE6-0759C15D264C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{58B54C92-98E1-4C68-943C-6860B661069B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58B54C92-98E1-4C68-943C-6860B661069B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58B54C92-98E1-4C68-943C-6860B661069B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67671186-9022-40C1-9CE6-0759C15D264C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67671186-9022-40C1-9CE6-0759C15D264C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67671186-9022-40C1-9CE6-0759C15D264C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67671186-9022-40C1-9CE6-0759C15D264C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
