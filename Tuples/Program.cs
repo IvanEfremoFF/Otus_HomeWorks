@@ -22,7 +22,7 @@
                     Console.WriteLine("Systme message: {0}", result.message);
                 }
                 else
-                    Console.WriteLine("\nSystme message: {0}", result.message);
+                    Console.WriteLine("\nSystem message: {0}", result.message);
 
                 Console.Write("\nPress any key for continue (Esc to quit)...");
                 if (Console.ReadKey().Key == ConsoleKey.Escape)

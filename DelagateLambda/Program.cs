@@ -16,27 +16,25 @@
                 Console.Write("Enter planet name: ");
                 var input = Console.ReadLine();
                 
-                Console.WriteLine("Searching info for planet \"{0}\"...", input);
-                
-                result = planetCatalogue.GetPlanet(input, x =>
-                {
-                    NumberOfValidations++;
+                if (String.IsNullOrEmpty(input))
+                    continue;
 
-                    if (NumberOfValidations == 3)
-                    {
-                        NumberOfValidations = 0;
-                        return "You're asking too often.";
-                    }
-                    return "";
-                });
+                Console.WriteLine("Searching info for planet \"{0}\" ...", input);
 
-                if (result.message != "No planet found.")
-                {
-                    Console.WriteLine("Planet \"{0}\" info: the order number from the Sun is {1}, length of its equator is {2}k km", input, result.NumberFromSun, result.EquatorLength);
-                    Console.WriteLine("Systme message: {0}", result.message);
-                }
-                else
+                result = planetCatalogue.GetPlanet(input, ValidationCriteria.LemoniaPlanet);
+                if (!String.IsNullOrEmpty(result.message))
                     Console.WriteLine("\nSystem message: {0}", result.message);
+                else
+                {
+                    result = planetCatalogue.GetPlanet(input, ValidationCriteria.RequestReached);
+                    if (result.message == "No planet found.")
+                        Console.WriteLine("\nSystem message: {0}", result.message);
+                    else
+                    {
+                        Console.WriteLine("Planet \"{0}\" info: the order number from the Sun is {1}, length of its equator is {2}k km", input, result.NumberFromSun, result.EquatorLength);
+                        Console.WriteLine("Systme message: {0}", result.message);
+                    }
+                }
 
                 Console.Write("\nPress any key for continue (Esc to quit)...");
                 if (Console.ReadKey().Key == ConsoleKey.Escape)

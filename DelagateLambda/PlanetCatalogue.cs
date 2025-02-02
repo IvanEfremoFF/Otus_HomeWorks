@@ -46,10 +46,16 @@ namespace DelagateLambda
         public (int NumberFromSun, int EquatorLength, string? ErrorMessage) GetPlanet(string PlanetName, PlanetValidator Criteria)
         {
             Planet? planet = _planets.Find(x => x.Name.ToLower() == PlanetName.ToLower());
-            string? message = null;
-            
+                        
             if (planet == null)
-                return (0, 0, "No planet found.");
+            {
+                string result = Criteria(PlanetName.ToLower());
+                if (!String.IsNullOrEmpty(result))
+                    return (0, 0, result);
+                else
+                    return (0, 0, "No planet found.");
+            }
+
             return (planet.NumberFromSun, planet.EquatorLength, Criteria(PlanetName));
         }
     }
