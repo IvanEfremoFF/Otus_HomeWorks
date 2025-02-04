@@ -12,7 +12,7 @@ namespace Tuples
     internal class PlanetCatalogue
     {
         List<Planet> _planets = new List<Planet>();
-        private byte requestQty = 0;
+        private byte requestQty = 3;
         public PlanetCatalogue() 
         { 
             var planet = new Planet();
@@ -41,23 +41,23 @@ namespace Tuples
             });
         }
 
-        public (int NumberFromSun, int EquatorLength, string? ErrorMessage) GetPlanet(string PlanetName)
+        public (int NumberFromSun, int EquatorLength, string ErrorMessage) GetPlanet(string PlanetName)
         {
             Planet? planet = _planets.Find(x => x.Name.ToLower() == PlanetName.ToLower());
-            string? message = null;
-            requestQty++;
+            string message = "";
 
-            if (requestQty == 3)
-            {
-                message = "You're asking too often.";
-                requestQty = 0;
-            }
-                
+            requestQty--;
 
             if (planet == null)
                 return (0, 0, "No planet found.");
-            else
-                return (planet.NumberFromSun, planet.EquatorLength, message);
+
+            if (requestQty == 0)
+            {
+                requestQty = 3;
+                return (0, 0, "You're asking too often.");
+            }
+
+            return (planet.NumberFromSun, planet.EquatorLength, message);
         }
     }
 }
