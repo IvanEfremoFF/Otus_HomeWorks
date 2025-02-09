@@ -11,11 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stack", "Stack\Stack.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\Interfaces.csproj", "{12F4472F-F6C6-4B95-A399-F205D807AAA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnonymusTypes", "AnonymusTypes\AnonymusTypes.csproj", "{58B54C92-98E1-4C68-943C-6860B661069B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnonymusTypes", "AnonymusTypes\AnonymusTypes.csproj", "{58B54C92-98E1-4C68-943C-6860B661069B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuples", "Tuples\Tuples.csproj", "{67671186-9022-40C1-9CE6-0759C15D264C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tuples", "Tuples\Tuples.csproj", "{67671186-9022-40C1-9CE6-0759C15D264C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelagateLambda", "DelagateLambda\DelagateLambda.csproj", "{BD387288-6BB6-4856-85C7-A8A5D5990653}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelagateLambda", "DelagateLambda\DelagateLambda.csproj", "{BD387288-6BB6-4856-85C7-A8A5D5990653}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramBot", "TelegramBot\TelegramBot.csproj", "{CB379D9B-80DD-4C34-A165-45AD5DDC43D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{BD387288-6BB6-4856-85C7-A8A5D5990653}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD387288-6BB6-4856-85C7-A8A5D5990653}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD387288-6BB6-4856-85C7-A8A5D5990653}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB379D9B-80DD-4C34-A165-45AD5DDC43D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB379D9B-80DD-4C34-A165-45AD5DDC43D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB379D9B-80DD-4C34-A165-45AD5DDC43D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB379D9B-80DD-4C34-A165-45AD5DDC43D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
