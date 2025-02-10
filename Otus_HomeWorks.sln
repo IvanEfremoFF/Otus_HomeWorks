@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tuples", "Tuples\Tuples.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelagateLambda", "DelagateLambda\DelagateLambda.csproj", "{BD387288-6BB6-4856-85C7-A8A5D5990653}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilesAndDirectories", "FilesAndDirectories\FilesAndDirectories.csproj", "{2442250B-7FB8-44ED-BF99-F2BA8448A325}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilesAndDirectories", "FilesAndDirectories\FilesAndDirectories.csproj", "{2442250B-7FB8-44ED-BF99-F2BA8448A325}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomDictionary", "CustomDictionary\CustomDictionary.csproj", "{65943A8D-5EA5-41A9-8C84-714C02B07002}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{2442250B-7FB8-44ED-BF99-F2BA8448A325}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2442250B-7FB8-44ED-BF99-F2BA8448A325}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2442250B-7FB8-44ED-BF99-F2BA8448A325}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65943A8D-5EA5-41A9-8C84-714C02B07002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65943A8D-5EA5-41A9-8C84-714C02B07002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65943A8D-5EA5-41A9-8C84-714C02B07002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65943A8D-5EA5-41A9-8C84-714C02B07002}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
