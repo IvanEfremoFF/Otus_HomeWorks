@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelagateLambda", "DelagateL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilesAndDirectories", "FilesAndDirectories\FilesAndDirectories.csproj", "{2442250B-7FB8-44ED-BF99-F2BA8448A325}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomDictionary", "CustomDictionary\CustomDictionary.csproj", "{65943A8D-5EA5-41A9-8C84-714C02B07002}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomDictionary", "CustomDictionary\CustomDictionary.csproj", "{65943A8D-5EA5-41A9-8C84-714C02B07002}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelegramBot", "TelegramBot\TelegramBot.csproj", "{13CCD0AA-5612-4CFB-B986-B53019DF2E1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{65943A8D-5EA5-41A9-8C84-714C02B07002}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65943A8D-5EA5-41A9-8C84-714C02B07002}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65943A8D-5EA5-41A9-8C84-714C02B07002}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13CCD0AA-5612-4CFB-B986-B53019DF2E1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13CCD0AA-5612-4CFB-B986-B53019DF2E1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13CCD0AA-5612-4CFB-B986-B53019DF2E1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13CCD0AA-5612-4CFB-B986-B53019DF2E1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
