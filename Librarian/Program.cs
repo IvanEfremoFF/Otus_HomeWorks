@@ -31,7 +31,7 @@
                     case "1":
                         Console.Write("Enter book name: ");
                         var bookName = Console.ReadLine();
-                        library.AddBook(bookName ?? "");
+                        library.AddBook(bookName ?? "no unread books");
                         break;
                     case "2":
                         Console.WriteLine($"List of unread books: \n{library.GetUnreadBooks()}");

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.ComponentModel;
@@ -10,11 +11,11 @@ namespace Librarian
 {
     internal class Library
     {
-        private ImmutableDictionary<string, int> _books;
+        private ConcurrentDictionary<string, int> _books;
 
         public Library() 
         {
-            _books = ImmutableDictionary.Create<string, int>();
+            _books = new ConcurrentDictionary<string, int>();
         }
 
         public void AddBook(string name) 
@@ -23,7 +24,7 @@ namespace Librarian
             if (_books.ContainsKey(name) || string.IsNullOrEmpty(name))
                 return;
 
-            _books = _books.Add(name, 0);
+            _books.TryAdd(name, 0);
         }
 
         public string GetUnreadBooks()
@@ -42,10 +43,13 @@ namespace Librarian
             
             foreach (var book in _books)
             {
-                _books = _books.Remove(book.Key);                
                 if (book.Value + 1 <= 100)
                 {
-                    _books = _books.Add(book.Key, book.Value + 1);
+                    _books[book.Key] = book.Value + 1;
+                }
+                else
+                {
+                    _books.TryRemove(book);
                 }
             }
 
