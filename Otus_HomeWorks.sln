@@ -25,9 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelegramBot", "TelegramBot\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegularCustomer", "RegularCustomer\RegularCustomer.csproj", "{3E1AA4E7-C48F-4658-BE2D-D5E61D47B77F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Librarian", "Librarian\Librarian.csproj", "{A044D0A3-79F4-48E0-9083-6CD411A3CDF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Librarian", "Librarian\Librarian.csproj", "{A044D0A3-79F4-48E0-9083-6CD411A3CDF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseJackBuilt", "HouseJackBuilt\HouseJackBuilt.csproj", "{492053BD-6E31-4C8F-99FB-0B0919C3D271}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JackHouse", "HouseJackBuilt\JackHouse.csproj", "{492053BD-6E31-4C8F-99FB-0B0919C3D271}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
