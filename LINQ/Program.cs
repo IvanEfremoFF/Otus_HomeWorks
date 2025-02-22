@@ -13,12 +13,12 @@
             list1.Take(7).ToList().ForEach(x => Console.Write($"{x} "));
 
 
-            Console.WriteLine("\n\n*** Top 33% of elements ***");
+            Console.WriteLine("\n\n*** Top 30% of elements ***");
             Console.WriteLine("Input");
             var list2 = new List<int> { 7, 32, 3, 0, 43, 86, 78, 14, 45 };
             list2.ForEach(x => Console.Write($"{x} "));
             Console.WriteLine("\nResult");
-            list2.Top(33).ToList().ForEach(x => Console.Write($"{x} "));
+            list2.Top(30).ToList().ForEach(x => Console.Write($"{x} "));
 
 
             Console.WriteLine("\n\n*** Top 120% of elements ***");
@@ -35,7 +35,7 @@
                 Console.WriteLine(e.Message);                
             }
 
-            Console.WriteLine("\n\n*** Top 33% of elements in list of persons ordered by Age***");
+            Console.WriteLine("\n\n*** Top 30% of elements in list of persons ordered by Age***");
             Console.WriteLine("Input");
             var list4 = new List<Person>
                 {
@@ -50,10 +50,10 @@
                 };
 
             list4.ForEach(x => Console.WriteLine($"[{x.Name} - {x.Age}]"));
-            Console.WriteLine("\nResult of ordering by age descending");
-            list4.Top(33, list4=> list4.Age).ToList().ForEach(x => Console.WriteLine($"[{x.Name} - {x.Age}]"));
-            Console.WriteLine("\nResult of ordering by name descending");
-            list4.Top(33, list4 => list4.Name).ToList().ForEach(x => Console.WriteLine($"[{x.Name} - {x.Age}]"));
+            Console.WriteLine("\nResult of top 30 ages ordering by age descending");
+            list4.Top(30, list4 => list4.Age).ToList().ForEach(x => Console.WriteLine($"[{x.Name} - {x.Age}]"));
+            Console.WriteLine("\nResult of top 30 names ordering by alphabet descending");
+            list4.Top(30, list4 => list4.Name).ToList().ForEach(x => Console.WriteLine($"[{x.Name} - {x.Age}]"));
         }
     }
 }

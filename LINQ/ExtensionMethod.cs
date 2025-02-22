@@ -31,13 +31,12 @@ namespace LINQ
             int count = (int) Math.Ceiling((double) collection.Count() * percent / 100);
 
             return collection
-                        .Reverse()
-                        .Take(count)
-                        .OrderByDescending(x => x);
+                        .OrderByDescending(x => x)
+                        .Take(count);
         }
 
 
-        public static IEnumerable<T> Top<T,Selector>(this IEnumerable<T> collection, int percent, Func<T, Selector> selector)
+        public static IEnumerable<T> Top<T, Selector>(this IEnumerable<T> collection, int percent, Func<T, Selector> selector)
         {
             if (percent < 1 || percent > 100)
                 throw new ArgumentOutOfRangeException("percent should be in range of 1-100");
@@ -45,9 +44,8 @@ namespace LINQ
             int count = (int)Math.Ceiling((double)collection.Count() * percent / 100);
 
             return collection
-                        .Reverse()
-                        .Take(count)
-                        .OrderByDescending(selector);
+                        .OrderByDescending(selector)
+                        .Take(count);
         }
     }
 }
