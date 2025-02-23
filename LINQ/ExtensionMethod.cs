@@ -9,15 +9,18 @@ namespace LINQ
     {
         public static IEnumerable<T> Take<T>(this IEnumerable<T> collection, int count)
         {
-            var i = 0;            
-
+            if (collection.Count() == 0)
+            {
+                yield return default;
+            }
+            
+            var i = 0;
             foreach (var item in collection)
             {
                 if (i >= count)
                     yield break;
 
                 yield return item;
-
                 i++;
             }
         }
@@ -25,14 +28,7 @@ namespace LINQ
 
         public static IEnumerable<T> Top<T>(this IEnumerable<T> collection, int percent)
         {
-            if (percent < 1 || percent > 100)
-                throw new ArgumentOutOfRangeException("percent should be in range of 1-100");
-
-            int count = (int) Math.Ceiling((double) collection.Count() * percent / 100);
-
-            return collection
-                        .OrderByDescending(x => x)
-                        .Take(count);
+            return Top(collection, percent, x => x);
         }
 
 
